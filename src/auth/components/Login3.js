@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { loginAction } from "../redux/actions/authActions";
+import Dashboard from "../../dashboard/components/Dashboard";
 export const Login3 = ({ isAuthenticated, loginAction }) => {
   const [data, setData] = useState({
     email: "",
@@ -19,6 +20,9 @@ export const Login3 = ({ isAuthenticated, loginAction }) => {
 
     //
   };
+  if (isAuthenticated) {
+    return <Dashboard></Dashboard>;
+  }
   return (
     <>
       {" "}
