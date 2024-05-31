@@ -2,6 +2,7 @@ import {
   LOGIN_SUCCESS,
   REGISTER_FAIL,
   REGISTER_SUCCESS,
+  USER_LOADED,
 } from "../types/authTypes";
 
 const authInitialState = {
@@ -14,6 +15,8 @@ const authInitialState = {
 export default (state = authInitialState, action) => {
   const { type, payload } = action;
   switch (type) {
+    case USER_LOADED:
+      return { ...state, user: payload, isAuthenticated: true, loading: false };
     case LOGIN_SUCCESS:
     // token should be added from payload to token field in authstate.
     // isAuthenticated : true loading: false user : null

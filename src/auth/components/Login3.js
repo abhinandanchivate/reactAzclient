@@ -30,17 +30,25 @@ export const Login3 = ({ isAuthenticated, loginAction }) => {
           <p class="lead">
             <i class="fas fa-user"></i> Sign into Your Account
           </p>
-          <form class="form" action="dashboard.html">
+          <form class="form" onSubmit={onSubmit}>
             <div class="form-group">
               <input
                 type="email"
                 placeholder="Email Address"
                 name="email"
                 required
+                onChange={onChange}
+                value={email}
               />
             </div>
             <div class="form-group">
-              <input type="password" placeholder="Password" name="password" />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={onChange}
+                value={password}
+              />
             </div>
             <input type="submit" class="btn btn-primary" value="Login" />
           </form>

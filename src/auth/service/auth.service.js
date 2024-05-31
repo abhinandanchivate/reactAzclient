@@ -3,4 +3,8 @@ import api from "../../utils/api";
 const registerService = (data) => api.post("/users", data);
 
 const loginService = (data) => api.post("/auth", data);
-export { registerService, loginService };
+
+const loadUserDataService = () => {
+  return api.get("/auth");
+};
+export { registerService, loginService, loadUserDataService };
