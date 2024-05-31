@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Header from "./core/components/layouts/Header";
+import Landing from "./core/components/layouts/Landing";
+
+import Footer from "./core/components/layouts/Footer";
+import RootRouter from "./RootRouter";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header appName="AZ Devconnector"></Header>
+      <RootRouter></RootRouter>
+      <Footer></Footer>
+    </>
   );
 }
 
