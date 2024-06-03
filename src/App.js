@@ -5,6 +5,7 @@ import Landing from "./core/components/layouts/Landing";
 
 import Footer from "./core/components/layouts/Footer";
 import RootRouter from "./RootRouter";
+import setAuthToken from "./utils/setAuthToken";
 
 function App() {
   return (

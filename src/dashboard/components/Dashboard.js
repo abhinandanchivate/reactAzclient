@@ -3,6 +3,9 @@ import { connect } from "react-redux";
 
 import PropTypes from "prop-types";
 import { getProfileAction } from "../../profile/redux/action/profileAction";
+import { Link } from "react-router-dom";
+import DashboardAction from "./DashboardAction";
+
 export const Dashboard = ({ user, profile, getProfileAction }) => {
   useEffect(() => {
     getProfileAction();
@@ -10,13 +13,17 @@ export const Dashboard = ({ user, profile, getProfileAction }) => {
 
   const createProfile = (
     <div class="my-2">
-      <button class="btn btn-danger">
+      <Link to="/profile/create" class="btn btn-danger">
         <i class="fas fa-user-minus"></i>
         Create Profile
-      </button>
+      </Link>
     </div>
   );
-  const profilePart = <h1>data is there</h1>;
+  const profilePart = (
+    <>
+      <DashboardAction></DashboardAction>
+    </>
+  );
   return (
     <>
       {" "}
@@ -25,7 +32,7 @@ export const Dashboard = ({ user, profile, getProfileAction }) => {
         <p class="lead">
           <i class="fas fa-user"></i> Welcome {user && user.name}
         </p>
-        {profile === null ? profilePart : createProfile}
+        {profile !== null ? profilePart : <> {createProfile}</>}
       </section>
     </>
   );

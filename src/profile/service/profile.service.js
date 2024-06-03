@@ -1,3 +1,4 @@
 import api from "../../utils/api";
 const getProfileService = () => api.get("/profile/me");
-export { getProfileService };
+const createProfileService = (formData) => api.post("/profile", formData);
+export { createProfileService, getProfileService };
