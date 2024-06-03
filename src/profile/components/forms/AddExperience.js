@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { connect } from "react-redux";
 import { useNavigate, Link } from "react-router-dom";
-
+import { addExperience } from "../../redux/action/profileAction";
 import PropTypes from "prop-types";
-export const AddExperience = (props) => {
+export const AddExperience = ({ addExperience }) => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     company: "",
