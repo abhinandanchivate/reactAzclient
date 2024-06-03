@@ -9,6 +9,9 @@ export const Login3 = ({ isAuthenticated, loginAction }) => {
     password: "",
   });
   const { email, password } = data;
+  if (isAuthenticated) {
+    return <Dashboard></Dashboard>;
+  }
   const onChange = (e) => {
     const { name, value } = e.target;
 
@@ -20,9 +23,7 @@ export const Login3 = ({ isAuthenticated, loginAction }) => {
 
     //
   };
-  if (isAuthenticated) {
-    return <Dashboard></Dashboard>;
-  }
+
   return (
     <>
       {" "}
